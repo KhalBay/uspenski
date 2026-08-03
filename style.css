@@ -1,0 +1,306 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #f4f4f4;
+    color: #000;
+    line-height: 1.5;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 40px 50px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+
+/* ===== ШАПКА ===== */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #000;
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.header-item {
+    flex: 1;
+    min-width: 120px;
+}
+.header-left { text-align: left; }
+.header-center { text-align: center; flex: 2; }
+.header-right { text-align: right; }
+
+.logo {
+    max-width: 100%;
+    height: auto;
+    max-height: 80px;
+    width: auto;
+}
+
+.header-center h1 {
+    font-size: 1.1rem;
+    font-weight: normal;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+}
+.header-center h2 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+.header-center h3 {
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+.header-center h4 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+.session-dates {
+    font-size: 1.1rem;
+    margin-top: 5px;
+}
+
+/* ===== ОСНОВНОЙ ТЕКСТ ===== */
+.invitation-text {
+    margin-bottom: 30px;
+}
+.invitation-text p {
+    margin-bottom: 12px;
+    text-align: justify;
+}
+
+.info-block {
+    margin: 20px 0;
+    padding: 10px 15px;
+    background-color: #f9f9f9;
+    border-left: 4px solid #003366;
+}
+.info-block ol {
+    padding-left: 25px;
+    margin: 10px 0;
+}
+.info-block ol li {
+    margin-bottom: 6px;
+    text-align: justify;
+}
+
+.important-date .date-highlight {
+    font-size: 1.2rem;
+    color: #b22222;
+    font-weight: bold;
+}
+
+a {
+    color: #003366;
+    text-decoration: none;
+    word-break: break-all;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/* ===== КОМИТЕТЫ ===== */
+.committee {
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid #ccc;
+}
+.committee h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+.committee p {
+    margin-bottom: 6px;
+    text-align: justify;
+}
+
+/* ===== ФОРМА ===== */
+.application-form {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f2f7ff;
+    border: 1px solid #003366;
+    border-radius: 6px;
+}
+.application-form h3 {
+    text-align: center;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+.application-form p {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 3px;
+    font-size: 0.95rem;
+}
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 8px 10px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1rem;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    background: #fff;
+}
+.form-group textarea {
+    resize: vertical;
+}
+
+.radio-group {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 5px;
+}
+.radio-group label {
+    font-weight: normal;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.submit-btn {
+    background: #003366;
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+    display: block;
+    margin: 10px auto 0;
+}
+.submit-btn:hover {
+    background: #002244;
+}
+#form-message {
+    margin-top: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* ===== ТРЕБОВАНИЯ ===== */
+.requirements {
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid #ccc;
+}
+.requirements h3 {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.requirements h4 {
+    font-size: 1.1rem;
+    margin: 20px 0 10px;
+}
+.requirements ul,
+.requirements ol {
+    padding-left: 25px;
+    margin-bottom: 10px;
+}
+.requirements ul li,
+.requirements ol li {
+    margin-bottom: 6px;
+    text-align: justify;
+}
+.requirements ol li strong {
+    font-weight: bold;
+}
+
+/* ===== ПОДВАЛ ===== */
+.footer {
+    margin-top: 35px;
+    padding-top: 15px;
+    border-top: 1px solid #ccc;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* ===== АДАПТИВНОСТЬ ===== */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px 15px;
+    }
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+    .header-left, .header-right {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .header-center h1 { font-size: 1rem; }
+    .header-center h2 { font-size: 1.1rem; }
+    .header-center h3 { font-size: 0.9rem; }
+    .header-center h4 { font-size: 1.1rem; }
+
+    .info-block {
+        padding: 8px 12px;
+    }
+    .radio-group {
+        flex-direction: column;
+        gap: 5px;
+    }
+    .submit-btn {
+        width: 100%;
+    }
+    .committee p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    .container {
+        padding: 15px 10px;
+    }
+    .header-center h2 {
+        font-size: 1rem;
+    }
+    .header-center h3 {
+        font-size: 0.8rem;
+    }
+    .session-dates {
+        font-size: 1rem;
+    }
+    .important-date .date-highlight {
+        font-size: 1rem;
+    }
+    .form-group input,
+    .form-group textarea {
+        font-size: 0.9rem;
+        padding: 6px 8px;
+    }
+}
