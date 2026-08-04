@@ -6,276 +6,284 @@
 
 body {
     font-family: 'Times New Roman', Times, serif;
-    background-color: #f4f4f4;
+    background: #e6e6e6;
     color: #000;
-    line-height: 1.5;
     padding: 20px;
 }
 
 .container {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
     background: #fff;
-    padding: 40px 50px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    border-radius: 4px;
+    padding: 30px 35px 20px 35px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
-/* ===== ШАПКА ===== */
-.header {
+/* ===== СТРАНИЦЫ ===== */
+.page {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px dashed #aaa;
+}
+
+.page-2 {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+/* ===== ШАПКА С ЛОГОТИПАМИ ===== */
+.header-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 2px solid #000;
-    padding-bottom: 20px;
-    margin-bottom: 25px;
-    flex-wrap: wrap;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
 }
 
-.header-item {
-    flex: 1;
-    min-width: 120px;
+.header-left,
+.header-right {
+    flex: 0 0 160px;
+    text-align: center;
 }
-.header-left { text-align: left; }
-.header-center { text-align: center; flex: 2; }
-.header-right { text-align: right; }
+
+.header-center {
+    flex: 2;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.org-name {
+    font-size: 0.75rem;
+    line-height: 1.3;
+}
+
+.org-short {
+    font-size: 1rem;
+    margin-top: 3px;
+}
 
 .logo {
     max-width: 100%;
+    max-height: 75px;
     height: auto;
-    max-height: 80px;
     width: auto;
 }
 
-.header-center h1 {
-    font-size: 1.1rem;
-    font-weight: normal;
-    letter-spacing: 1px;
-    margin-bottom: 2px;
-}
-.header-center h2 {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 4px;
-}
-.header-center h3 {
-    font-size: 1rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin-bottom: 4px;
-}
-.header-center h4 {
-    font-size: 1.3rem;
-    font-weight: bold;
-    margin-bottom: 2px;
-}
-.session-dates {
-    font-size: 1.1rem;
-    margin-top: 5px;
+/* ===== ТРИ КОЛОНКИ ===== */
+.three-columns {
+    display: flex;
+    gap: 25px;
 }
 
-/* ===== ОСНОВНОЙ ТЕКСТ ===== */
-.invitation-text {
-    margin-bottom: 30px;
-}
-.invitation-text p {
-    margin-bottom: 12px;
-    text-align: justify;
+.col {
+    flex: 1;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    min-width: 0;
 }
 
-.info-block {
-    margin: 20px 0;
-    padding: 10px 15px;
-    background-color: #f9f9f9;
-    border-left: 4px solid #003366;
-}
-.info-block ol {
-    padding-left: 25px;
-    margin: 10px 0;
-}
-.info-block ol li {
+.col p {
     margin-bottom: 6px;
     text-align: justify;
 }
 
-.important-date .date-highlight {
-    font-size: 1.2rem;
-    color: #b22222;
+/* ===== КОЛОНКА 1 (ЛЕВАЯ) ===== */
+.col-1 h1 {
+    font-size: 0.95rem;
+    font-weight: normal;
+    text-align: center;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+}
+
+.col-1 h2 {
+    font-size: 1rem;
     font-weight: bold;
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+.col-1 h3 {
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.col-1 h4 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2px;
+}
+
+.col-1 .date {
+    text-align: center;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.col-1 .info-title {
+    text-align: center;
+    font-size: 0.7rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-top: 5px;
+    text-transform: uppercase;
+}
+
+.col-1 h5 {
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 1px;
+    margin: 10px 0 8px 0;
+}
+
+/* ===== КОЛОНКА 2 (ЦЕНТРАЛЬНАЯ) ===== */
+.col-2 ol {
+    padding-left: 20px;
+    margin: 8px 0;
+}
+
+.col-2 ol li {
+    margin-bottom: 4px;
+    text-align: justify;
+}
+
+.highlight {
+    font-weight: bold;
+    color: #b22222;
+}
+
+/* ===== КОЛОНКА 3 (ПРАВАЯ) ===== */
+.col-3 h5 {
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin: 10px 0 8px 0;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.col-3 p {
+    margin-bottom: 4px;
+}
+
+/* ===== ФОРМА ЗАЯВКИ ===== */
+.app-form {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.7rem;
+    background: #f9f9f9;
+    padding: 10px 12px;
+    border: 1px dashed #003366;
+    border-radius: 3px;
+    margin: 8px 0;
+    line-height: 1.8;
+}
+
+.app-form p {
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 1px;
+}
+
+.download-area {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.download-btn {
+    display: inline-block;
+    background: #003366;
+    color: #fff !important;
+    padding: 8px 20px;
+    font-size: 0.85rem;
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 4px;
+    text-decoration: none !important;
+    transition: background 0.2s;
+    border: none;
+    cursor: pointer;
+}
+
+.download-btn:hover {
+    background: #002244;
+    text-decoration: none !important;
+}
+
+.small-note {
+    font-size: 0.7rem !important;
+    margin-top: 6px !important;
+}
+
+.small-note a {
+    word-break: break-all;
 }
 
 a {
     color: #003366;
     text-decoration: none;
-    word-break: break-all;
 }
+
 a:hover {
     text-decoration: underline;
 }
 
-/* ===== КОМИТЕТЫ ===== */
-.committee {
-    margin-top: 25px;
-    padding-top: 15px;
-    border-top: 1px solid #ccc;
-}
-.committee h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    text-align: center;
-    letter-spacing: 2px;
-}
-.committee p {
-    margin-bottom: 6px;
-    text-align: justify;
-}
-
-/* ===== ФОРМА ===== */
-.application-form {
-    margin-top: 30px;
-    padding: 20px;
-    background-color: #f2f7ff;
-    border: 1px solid #003366;
-    border-radius: 6px;
-}
-.application-form h3 {
-    text-align: center;
-    font-size: 1.3rem;
-    margin-bottom: 10px;
-}
-.application-form p {
-    text-align: center;
-    margin-bottom: 5px;
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-.form-group label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 3px;
-    font-size: 0.95rem;
-}
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 8px 10px;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 1rem;
-    border: 1px solid #aaa;
-    border-radius: 4px;
-    background: #fff;
-}
-.form-group textarea {
-    resize: vertical;
-}
-
-.radio-group {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-top: 5px;
-}
-.radio-group label {
-    font-weight: normal;
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    cursor: pointer;
-}
-
-.submit-btn {
-    background: #003366;
-    color: #fff;
-    border: none;
-    padding: 12px 30px;
-    font-size: 1.1rem;
-    font-family: 'Times New Roman', Times, serif;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background 0.2s;
-    display: block;
-    margin: 10px auto 0;
-}
-.submit-btn:hover {
-    background: #002244;
-}
-#form-message {
-    margin-top: 15px;
-    text-align: center;
-    font-weight: bold;
-}
-
-/* ===== ТРЕБОВАНИЯ ===== */
-.requirements {
-    margin-top: 30px;
-    padding-top: 15px;
-    border-top: 1px solid #ccc;
-}
-.requirements h3 {
-    font-size: 1.2rem;
-    text-align: center;
-    margin-bottom: 15px;
-}
-.requirements h4 {
-    font-size: 1.1rem;
-    margin: 20px 0 10px;
-}
-.requirements ul,
-.requirements ol {
-    padding-left: 25px;
-    margin-bottom: 10px;
-}
-.requirements ul li,
-.requirements ol li {
-    margin-bottom: 6px;
-    text-align: justify;
-}
-.requirements ol li strong {
-    font-weight: bold;
-}
-
 /* ===== ПОДВАЛ ===== */
 .footer {
-    margin-top: 35px;
-    padding-top: 15px;
+    margin-top: 25px;
+    padding-top: 12px;
     border-top: 1px solid #ccc;
     text-align: center;
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     color: #555;
 }
 
 /* ===== АДАПТИВНОСТЬ ===== */
-@media (max-width: 768px) {
-    .container {
-        padding: 20px 15px;
-    }
-    .header {
+@media (max-width: 992px) {
+    .three-columns {
         flex-direction: column;
-        text-align: center;
+        gap: 15px;
     }
-    .header-left, .header-right {
-        text-align: center;
-        margin-bottom: 10px;
-    }
-    .header-center h1 { font-size: 1rem; }
-    .header-center h2 { font-size: 1.1rem; }
-    .header-center h3 { font-size: 0.9rem; }
-    .header-center h4 { font-size: 1.1rem; }
 
-    .info-block {
-        padding: 8px 12px;
-    }
-    .radio-group {
+    .header-top {
         flex-direction: column;
-        gap: 5px;
+        text-align: center;
     }
-    .submit-btn {
-        width: 100%;
+
+    .header-left,
+    .header-right {
+        flex: 1 1 auto;
     }
-    .committee p {
+
+    .header-center {
+        margin: 10px 0;
+    }
+
+    .col {
         font-size: 0.95rem;
+    }
+
+    .app-form {
+        font-size: 0.85rem;
+    }
+
+    .col-1 h1 {
+        font-size: 1.1rem;
+    }
+
+    .col-1 h2 {
+        font-size: 1.2rem;
+    }
+
+    .col-1 h3 {
+        font-size: 0.95rem;
+    }
+
+    .col-1 h4 {
+        font-size: 1.4rem;
     }
 }
 
@@ -283,24 +291,24 @@ a:hover {
     body {
         padding: 10px;
     }
+
     .container {
-        padding: 15px 10px;
+        padding: 15px 12px;
     }
-    .header-center h2 {
-        font-size: 1rem;
+
+    .col {
+        font-size: 0.85rem;
     }
-    .header-center h3 {
-        font-size: 0.8rem;
+
+    .app-form {
+        font-size: 0.7rem;
+        padding: 8px 10px;
     }
-    .session-dates {
-        font-size: 1rem;
-    }
-    .important-date .date-highlight {
-        font-size: 1rem;
-    }
-    .form-group input,
-    .form-group textarea {
+
+    .download-btn {
         font-size: 0.9rem;
-        padding: 6px 8px;
+        padding: 8px 20px;
+        width: 100%;
+        text-align: center;
     }
 }

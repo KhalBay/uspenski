@@ -1,57 +1,49 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('seminarForm');
-    const messageDiv = document.getElementById('form-message');
+    const downloadBtn = document.getElementById('downloadBtn');
 
-    if (form) {
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            // Очищаем предыдущее сообщение
-            messageDiv.textContent = '';
-            messageDiv.style.color = '#000';
-
-            // Проверяем обязательные поля
-            const fio = document.getElementById('fio').value.trim();
-            const email = document.getElementById('email').value.trim();
-
-            if (!fio || !email) {
-                messageDiv.textContent = '⚠️ Пожалуйста, заполните поля "ФИО" и "E-mail".';
-                messageDiv.style.color = '#b22222';
-                return;
-            }
-
-            // Простейшая проверка email
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailPattern.test(email)) {
-                messageDiv.textContent = '⚠️ Введите корректный E-mail адрес.';
-                messageDiv.style.color = '#b22222';
-                return;
-            }
-
-            // Собираем данные
-            const formData = new FormData(form);
-
-            // Отправляем на сервер
-            fetch('send_form.php', {
-                method: 'POST',
-                body: formData
-            })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.status === 'success') {
-                        messageDiv.textContent = '✅ Ваша заявка успешно отправлена!';
-                        messageDiv.style.color = '#006400';
-                        form.reset();
-                    } else {
-                        messageDiv.textContent = '❌ Ошибка: ' + (data.message || 'попробуйте позже.');
-                        messageDiv.style.color = '#b22222';
-                    }
-                })
-                .catch(error => {
-                    console.error('Ошибка:', error);
-                    messageDiv.textContent = '❌ Произошла сетевая ошибка. Проверьте соединение.';
-                    messageDiv.style.color = '#b22222';
-                });
+    if (downloadBtn) {
+        downloadBtn.addEventListener('click', function() {
+            generateAndDownloadDoc();
         });
+    }
+
+    function generateAndDownloadDoc() {
+        // Формируем текст для Word-документа (чистый текст, без HTML)
+        const docContent = `
+ЗАЯВКА НА УЧАСТИЕ
+в 53-й сессии Международного семинара
+им. Д.Г. Успенского-В.Н. Страхова
+«ВОПРОСЫ ТЕОРИИ И ПРАКТИКИ ГЕОЛОГИЧЕСКОЙ ИНТЕРПРЕТАЦИИ ГРАВИТАЦИОННЫХ, МАГНИТНЫХ И ЭЛЕКТРИЧЕСКИХ ПОЛЕЙ»
+Тюмень, 1-4 февраля 2027 г.
+
+ФИО ___________________________________
+Должность ______________________________
+Учёная степень, учёное звание _____________
+Организация _____________________________
+Адрес __________________________________
+Телефон ________________________________
+E-mail __________________________________
+Название доклада ________________________
+_______________________________________
+_______________________________________
+Форма доклада: ☐ устный    ☐ стендовый    ☐ on-line
+
+Заполненную форму отправьте на email: uspenskiy.strahov.2027@yandex.ru
+        `;
+
+        // Создаём Blob как текстовый файл
+        // Важно: используем application/msword для правильного определения Word
+        const blob = new Blob([docContent], {
+            type: 'application/msword;charset=utf-8'
+        });
+
+        // Создаём ссылку для скачивания
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = 'Zayavka_53_sessiya_Tyumen_2027.doc';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(link.href);
     }
 });
